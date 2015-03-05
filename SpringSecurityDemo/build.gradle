@@ -1,0 +1,39 @@
+buildscript {
+  ext { springBootVersion = '1.2.1.RELEASE' }
+  repositories {
+    maven { url "https://repo.spring.io/libs-release" }
+    mavenLocal()
+    mavenCentral()
+  }
+  dependencies { classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'spring-boot'
+
+sourceCompatibility = 1.7
+version = '1.0'
+jar {
+  manifest {
+    attributes 'Implementation-Title': 'SpringSecurityDemo', 'Implementation-Version': version
+  }
+}
+
+repositories { mavenCentral() }
+
+dependencies {
+  compile("org.springframework.boot:spring-boot-starter-web")
+  compile("org.springframework.boot:spring-boot-starter-security")
+  compile("org.postgresql:postgresql:9.3-1102-jdbc41")
+  compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
+  testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+test { systemProperties 'property': 'value' }
+
+uploadArchives {
+  repositories {
+    flatDir { dirs 'repos' }
+  }
+}
