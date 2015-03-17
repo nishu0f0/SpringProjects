@@ -9,7 +9,7 @@ public class GreetingsController {
   
   @RequestMapping("greetings")
   public String getGreetings(){
-    System.out.println("Controller: Received Request for Greetings");
-    return "Welcome";
+    System.out.println("Controller: Received Request for Greetings#############");
+    return "Greetings user";
   }
 }

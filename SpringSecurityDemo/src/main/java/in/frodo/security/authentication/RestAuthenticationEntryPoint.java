@@ -1,4 +1,4 @@
-package in.frodo.authentication;
+package in.frodo.security.authentication;
 
 import java.io.IOException;
 
@@ -14,7 +14,7 @@ public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {
   @Override
   public void commence(HttpServletRequest request, HttpServletResponse response,
       AuthenticationException authException) throws IOException, ServletException {
-    System.out.println("AuthenticationEntryPoint: AArrived at AuthenticationEntryPoint");
+    System.out.println("AuthenticationEntryPoint: AArrived at AuthenticationEntryPoint \n" + authException.getMessage());
     response.sendError( HttpServletResponse.SC_UNAUTHORIZED, authException.getMessage());
   }
   

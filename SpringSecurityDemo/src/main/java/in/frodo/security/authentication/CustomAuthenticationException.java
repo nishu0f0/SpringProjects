@@ -1,4 +1,4 @@
-package in.frodo.authentication;
+package in.frodo.security.authentication;
 
 import org.springframework.security.core.AuthenticationException;
 

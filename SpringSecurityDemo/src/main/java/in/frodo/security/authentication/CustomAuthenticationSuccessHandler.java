@@ -1,4 +1,4 @@
-package in.frodo.authentication;
+package in.frodo.security.authentication;
 
 import java.io.IOException;
 
@@ -20,7 +20,6 @@ public class CustomAuthenticationSuccessHandler extends SimpleUrlAuthenticationS
   @Override
   public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
       Authentication authentication) throws IOException, ServletException {
-    String url = determineTargetUrl(request, response);
-    request.getRequestDispatcher(url).forward(request, response);
+    System.out.println("onAuthenticationSuccess");
   }
 }

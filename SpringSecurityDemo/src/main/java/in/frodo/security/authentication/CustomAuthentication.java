@@ -1,4 +1,4 @@
-package in.frodo.authentication;
+package in.frodo.security.authentication;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -23,7 +23,7 @@ public class CustomAuthentication implements Authentication {
     this.details = null;
     this.athorities = new ArrayList<SimpleGrantedAuthority>();
     this.authenticated = false;
-    System.out.println("Authentication: " + name + " " + principal + " " + credentials + " " + details + " " + authenticated);
+    //System.out.println("Authentication: " + name + " " + principal + " " + credentials + " " + details + " " + authenticated);
   }
 
   public CustomAuthentication(String name, Object principal, Object credentials, Object details,
@@ -34,7 +34,7 @@ public class CustomAuthentication implements Authentication {
     this.details = details;
     this.athorities = athorities;
     this.authenticated = false;
-    System.out.println("Authentication: " + name + " " + principal + " " + credentials + " " + details + " " + authenticated);
+    //System.out.println("Authentication: " + name + " " + principal + " " + credentials + " " + details + " " + authenticated);
   }
 
   @Override
